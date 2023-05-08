@@ -5,27 +5,26 @@
     <title>Add User</title>
 </head>
 <body>
-
-<form method="post" th:action="@{/user}">
-    <div class="form-group">
-        <label>Name
-            <input type="text" name="username" th:value="${user.username}" class="form-control">
+<!--<h1 th:text="${user.username}"></h1>-->
+<form method="post" action="/user">
+    <p th:if="${error} != null" th:text="${error}" style="color:red"></p>
+        <label>Username:
+            <input type="text" name="username" th:value="${username}">
         </label>
-    </div>
-    <div class="form-group">
-        <label>Email
-            <input type="email" name="email" th:value="${user.email}" class="form-control">
+    <br/>
+    <label>Email:
+            <input type="email" name="email" th:value="${email}">
         </label>
-    </div>
-    <p th:text="${model.error}"></p>
-    <div class="form-group">
-        <label>Password
-            <input type="password" name="password" th:value="${user.password}" class="form-control">
+    <br/>
+        <label>Password:
+            <input type="password" name="password">
         </label>
-    </div>
-    <label>Verify Password
+    <br/>
+    <label>Verify Password:
     <input name="verify" type="password">
     </label>
+    <br/>
+    <input type="submit">
 </form>
 
 </body>
