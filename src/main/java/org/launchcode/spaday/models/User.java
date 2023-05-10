@@ -18,7 +18,7 @@ public class User {
     @NotBlank(message = "Passwords must match.")
     private String verify;
 
-    @NotNull(message = "Passwords do not match")
+    @NotNull(message = "Passwords do not match.")
     private String verifyPassword;
 
     public User() {
